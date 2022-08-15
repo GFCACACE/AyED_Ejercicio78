@@ -35,10 +35,7 @@ void leerArchivoFinal() {
     fread(&inventario, sizeof(inventario), 1, arch);
     cout << "codP\tPU\t\tStk" << endl;
     while (!feof(arch)) {
-        cout << inventario.codP << "    "; 
-        cout.precision(7);
-        cout << "$"<< inventario.PU<<"    ";
-        cout << inventario.Stk<< "      "<<endl;;
+        printf("%03d\t$%7.2f\t\t%03d\n",inventario.codP, inventario.PU, inventario.Stk);
         fread(&inventario, sizeof(inventario), 1, arch);
     }
     cout << "---------------------" << endl;
